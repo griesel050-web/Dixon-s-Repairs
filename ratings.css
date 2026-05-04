@@ -1,0 +1,222 @@
+/* ─── RATINGS PAGE STYLES ─── */
+
+.ratings-overview {
+  background: var(--steel-mid);
+  padding: 100px 5%;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* BIG SCORE PANEL */
+.overview-big {
+  background: var(--steel-light);
+  border: 1px solid rgba(200,214,229,0.07);
+  border-top: 3px solid var(--gold);
+  padding: 44px 36px;
+  text-align: center;
+  position: sticky;
+  top: 90px;
+}
+
+.big-score {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 7rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.overview-count {
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+}
+
+/* BARS */
+.bar-group {
+  margin-top: 32px;
+  text-align: left;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.bar-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.bar-track {
+  flex: 1;
+  height: 7px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+.bar-pct {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+  width: 32px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* HIGHLIGHTS */
+.overview-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.highlight-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--steel-light);
+  border-left: 3px solid var(--red);
+  padding: 24px 26px;
+  transition: border-left-color 0.2s;
+}
+.highlight-card:hover { border-left-color: var(--gold); }
+
+.h-icon { font-size: 1.8rem; flex-shrink: 0; }
+
+.h-text strong {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--chrome-bright);
+  margin-bottom: 6px;
+}
+
+.h-text p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* REVIEWS SECTION */
+.reviews-section {
+  background: var(--steel);
+  padding: 100px 5%;
+  position: relative;
+  overflow: hidden;
+}
+.reviews-section::before {
+  content: '★';
+  position: absolute;
+  right: -20px; top: 20px;
+  font-size: 22rem;
+  color: rgba(240,165,0,0.03);
+  pointer-events: none;
+  user-select: none;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.review-card {
+  background: var(--steel-mid);
+  padding: 32px 28px;
+  border-top: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-top-color 0.3s, background 0.3s;
+}
+.review-card:hover {
+  border-top-color: var(--gold);
+  background: var(--steel-light);
+}
+
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.reviewer-avatar {
+  width: 42px;
+  height: 42px;
+  background: var(--red);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.reviewer-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--chrome-bright);
+  margin-bottom: 4px;
+}
+
+.review-body {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.8;
+  flex: 1;
+  font-style: italic;
+}
+
+.review-footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+  border-top: 1px solid rgba(200,214,229,0.07);
+  padding-top: 14px;
+}
+
+.google-g {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  color: #4285F4;
+  font-weight: 700;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1000px) {
+  .overview-grid { grid-template-columns: 1fr; }
+  .overview-big { position: static; }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+}
